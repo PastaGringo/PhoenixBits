@@ -1,5 +1,7 @@
 # PhoenixBits 
 
+Based on Bitkarrot idea: [https://github.com/bitkarrot/lnbits-phoenixd](https://github.com/bitkarrot/lnbits-phoenixd)
+
 One container for LNbits + Phoenix + Traefik SSL HTTPS certificates.
 
 ## Docker
