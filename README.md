@@ -6,31 +6,39 @@ One container for LNbits + Phoenix + Traefik SSL HTTPS certificates.
 
 ## Docker
 Install Docker if needed:
-```
+```sh
 curl -fsSL https://get.docker.com -o install-docker.sh
 ```
-```
+```sh
 sudo sh install-docker.sh
 ```
 Verify if Docker & Docker compose are installed:
-```
+```sh
 docker -v
 Docker version 25.0.3, build 4debf41
 ```
-```
+
+```sh
 docker compose version
 Docker Compose version v2.24.6
 ```
+
 Cloning the repo:
-```
+```sh
 git clone https://github.com/PastaGringo/PhoenixBits.git && cd PhoenixBits
 ```
-Update the .env file with your info:
+
+Create an .env file from the example file
+```sh
+cp -n .env.example .env
 ```
+
+Update the .env file with your info:
+```sh
 nano .env
 ```
 Content:
-```
+```ini
 # You need to add the phoenixbits domain otherwise Trefik won't be able to serve PhoenixBits on HTTPS
 PHOENIXBITS_DOMAIN=
 # Let's Encrypt contact email
@@ -38,8 +46,9 @@ LE_EMAIL=
 LNBITS_SITE_TITLE=
 LNBITS_SITE_TAGLINE=
 ```
+
 Here the docker-compose.yml file content (you don't have to modify something):
-```
+```yaml
 # version: '3.8'
 services:
 
@@ -98,7 +107,7 @@ services:
 ```
 
 Once done, you can compose the PhoenixBits docker compose stack (CTRL+C to exit docker compose logs):
-```
+```sh
 docker compose up -d && docker compose logs -f phoenixbits
 #docker compose up -d && docker compose logs -f <<< to troubleshoot Traefik issues with your domain
 ```
