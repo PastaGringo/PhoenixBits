@@ -13,7 +13,8 @@ if [ -f "docker_setup_done" ]; then
     echo
     echo "> Starting Phoenixd... 🚀"
     echo
-    nohup /phoenixd/phoenix-0.1.4-linux-x64/phoenixd --agree-to-terms-of-service --http-bind-ip 0.0.0.0 &
+    /phoenixd/phoenixd --version
+    nohup /phoenixd/phoenixd --agree-to-terms-of-service --http-bind-ip 0.0.0.0 &
     sleep 5
     echo 
     echo "> Starting LNbits... 🚀"
@@ -24,7 +25,8 @@ else
     echo
     echo "> Starting Phoenixd... 🚀"
     echo
-    nohup /phoenixd/phoenix-0.1.4-linux-x64/phoenixd --agree-to-terms-of-service --http-bind-ip 0.0.0.0 &
+    /phoenixd/phoenixd --version
+    nohup /phoenixd/phoenixd --agree-to-terms-of-service --http-bind-ip 0.0.0.0 &
     sleep 5
     echo 
     phoenix_conf=$(cat /root/.phoenix/phoenix.conf)

@@ -3,8 +3,8 @@ RUN apt-get clean
 RUN apt-get update
 RUN apt-get install -y curl pkg-config build-essential libnss-myhostname git unzip
 WORKDIR /phoenixd
-COPY phoenix-0.1.4-linux-x64.zip /phoenixd/phoenix-0.1.4-linux-x64.zip
-RUN unzip /phoenixd/phoenix-0.1.4-linux-x64.zip
+COPY phoenix-*.zip /phoenixd
+RUN unzip -o -j /phoenixd/phoenix-*.zip
 RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
 RUN apt-get install -y apt-utils wget
