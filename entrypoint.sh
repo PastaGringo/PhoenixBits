@@ -30,7 +30,7 @@ else
     sleep 5
     echo 
     phoenix_conf=$(cat /root/.phoenix/phoenix.conf)
-    api_key=$(echo $phoenix_conf | cut -d'=' -f2)
+    api_key=$(echo $phoenix_conf | cut -d'=' -f3)
     echo "Getting phoenixd API key..."
     echo "API KEY: $api_key"
     echo
